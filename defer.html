@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="openModalBtn" onclick="openModal()">Open Modal</button>
+    <script src="modal.js"></script>
+    <script>
+        const modal = new Modal("okBtn", "cancelBtn", "closeModalBtn");
+        let openModalBtn = document.getElementById("openModalBtn");
+        async function openModal () {
+            var result = await modal.open()
+            if (result) {
+                alert("True")
+            } else {
+                alert("False")
+            }
+            console.log(result)
+        }
+    </script>
+</body>
+</html>
